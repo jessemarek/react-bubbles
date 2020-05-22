@@ -26,9 +26,12 @@ const ColorList = ({ colors, updateColors }) => {
       .then(res => {
         updateColors(
           colors.map(c => c.id === res.data.id ? res.data : c)
+
         )
       })
       .catch(err => console.log(err))
+
+    setEditing(false)
   };
 
   const deleteColor = color => {
